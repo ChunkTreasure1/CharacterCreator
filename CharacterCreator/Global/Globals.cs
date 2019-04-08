@@ -19,6 +19,7 @@ namespace CharacterCreator.Global
     public enum Gender
     {
         Male,
-        Female
+        Female,
+        Random
     }
 }

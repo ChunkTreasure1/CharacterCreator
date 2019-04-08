@@ -18,15 +18,20 @@ namespace CharacterCreator
         private List<Image> m_FemaleImages = new List<Image>();
         private List<Image> m_Images = new List<Image>();
 
+        private string[] m_MaleNames;
+        private string[] m_FemaleNames;
+
         private int m_CurrentImageIndex = 0;
+        private Random random = new Random();
 
         public frmMain()
         {
             InitializeComponent();
             LoadImages();
+            LoadNames();
 
-            pbCharacter.Image = m_MaleImages[0];
-            cbGender.SelectedIndex = 0;
+            cbGender.SelectedIndex = 2;
+            CreateRandomCharacter();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -104,6 +109,7 @@ namespace CharacterCreator
             }
         }
 
+        //Loads the base images
         private void LoadImages()
         {
             for (int i = 0; i < 9; i++)
@@ -117,6 +123,13 @@ namespace CharacterCreator
             }
         }
 
+        private void LoadNames()
+        {
+            m_MaleNames = System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\Names/male-first-names.txt", System.Text.Encoding.GetEncoding(1252));
+            m_FemaleNames = System.IO.File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "\\Names/female-first-names.txt", System.Text.Encoding.GetEncoding(1252));
+        }
+
+        //Selects the gender of the charaxter
         private void CbGender_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbGender.SelectedIndex == 0)
@@ -129,11 +142,15 @@ namespace CharacterCreator
                 Globals.Gender = Gender.Female;
                 m_Images = m_FemaleImages;
             }
-
+            else if (cbGender.SelectedIndex == 2)
+            {
+                return;
+            }
             m_CurrentImageIndex = 0;
             pbCharacter.Image = m_Images[m_CurrentImageIndex];
         }
 
+        //Changes image
         private void BtnLastImage_Click(object sender, EventArgs e)
         {
             m_CurrentImageIndex--;
@@ -144,6 +161,7 @@ namespace CharacterCreator
             pbCharacter.Image = m_Images[m_CurrentImageIndex];
         }
 
+        //Changes image
         private void BtnNextImage_Click(object sender, EventArgs e)
         {
             m_CurrentImageIndex++;
@@ -154,9 +172,49 @@ namespace CharacterCreator
             pbCharacter.Image = m_Images[m_CurrentImageIndex];
         }
 
+        //Changes the name of the character
         private void TxtBoxName_TextChanged(object sender, EventArgs e)
         {
             Globals.Name = txtBoxName.Text;
+        }
+
+        private void CreateRandomCharacter()
+        {
+            if (cbGender.SelectedIndex == 2)
+            {
+                int gender = cbGender.SelectedIndex = random.Next(0, 2);
+                Globals.Gender = (Gender)gender;
+
+                if (gender == 0)
+                {
+                    m_Images = m_MaleImages;
+                    pbCharacter.Image = m_MaleImages[random.Next(0, m_MaleImages.Count)];
+                    txtBoxName.Text = m_MaleNames[random.Next(0, m_MaleNames.Length)];
+                }
+                else
+                {
+                    m_Images = m_FemaleImages;
+                    pbCharacter.Image = m_FemaleImages[random.Next(0, m_FemaleImages.Count)];
+                    txtBoxName.Text = m_FemaleNames[random.Next(0, m_FemaleNames.Length)];
+                }
+            }
+            else if (cbGender.SelectedIndex == 1)
+            {
+                m_Images = m_FemaleImages;
+                pbCharacter.Image = m_FemaleImages[random.Next(0, m_FemaleImages.Count)];
+                txtBoxName.Text = m_FemaleNames[random.Next(0, m_FemaleNames.Length)];
+            }
+            else if (cbGender.SelectedIndex == 0)
+            {
+                m_Images = m_MaleImages;
+                pbCharacter.Image = m_MaleImages[random.Next(0, m_MaleImages.Count)];
+                txtBoxName.Text = m_MaleNames[random.Next(0, m_MaleNames.Length)];
+            }
+        }
+
+        private void BtnRandom_Click(object sender, EventArgs e)
+        {
+            CreateRandomCharacter();
         }
     }
 }
