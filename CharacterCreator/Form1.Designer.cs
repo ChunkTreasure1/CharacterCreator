@@ -41,10 +41,6 @@
             this.lblAgilityCount = new System.Windows.Forms.Label();
             this.lblIntelligenceCount = new System.Windows.Forms.Label();
             this.pbCharacter = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
@@ -57,6 +53,12 @@
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.txtBoxName = new System.Windows.Forms.TextBox();
             this.btnRandom = new System.Windows.Forms.Button();
+            this.lblRace = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cbRace = new System.Windows.Forms.ComboBox();
+            this.lblClass = new System.Windows.Forms.Label();
+            this.cbClass = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -199,47 +201,6 @@
             this.pbCharacter.TabIndex = 15;
             this.pbCharacter.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(145, 117);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 17);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "10";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(108, 111);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 27);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(179, 111);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 27);
-            this.button3.TabIndex = 23;
-            this.button3.Text = ">";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 113);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 17);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Intelligence";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -353,20 +314,87 @@
             this.btnRandom.UseVisualStyleBackColor = true;
             this.btnRandom.Click += new System.EventHandler(this.BtnRandom_Click);
             // 
+            // lblRace
+            // 
+            this.lblRace.AutoSize = true;
+            this.lblRace.Location = new System.Drawing.Point(19, 121);
+            this.lblRace.Name = "lblRace";
+            this.lblRace.Size = new System.Drawing.Size(41, 17);
+            this.lblRace.TabIndex = 34;
+            this.lblRace.Text = "Race";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(455, 289);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
+            this.flowLayoutPanel1.TabIndex = 35;
+            // 
+            // cbRace
+            // 
+            this.cbRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRace.FormattingEnabled = true;
+            this.cbRace.Items.AddRange(new object[] {
+            "Human",
+            "Elf",
+            "Dwarf",
+            "Random"});
+            this.cbRace.Location = new System.Drawing.Point(108, 117);
+            this.cbRace.Margin = new System.Windows.Forms.Padding(4);
+            this.cbRace.Name = "cbRace";
+            this.cbRace.Size = new System.Drawing.Size(99, 24);
+            this.cbRace.TabIndex = 36;
+            this.cbRace.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
+            // lblClass
+            // 
+            this.lblClass.AutoSize = true;
+            this.lblClass.Location = new System.Drawing.Point(19, 152);
+            this.lblClass.Name = "lblClass";
+            this.lblClass.Size = new System.Drawing.Size(42, 17);
+            this.lblClass.TabIndex = 37;
+            this.lblClass.Text = "Class";
+            // 
+            // cbClass
+            // 
+            this.cbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClass.FormattingEnabled = true;
+            this.cbClass.Items.AddRange(new object[] {
+            "Wizard",
+            "Archer",
+            "Warrior",
+            "Random"});
+            this.cbClass.Location = new System.Drawing.Point(109, 152);
+            this.cbClass.Margin = new System.Windows.Forms.Padding(4);
+            this.cbClass.Name = "cbClass";
+            this.cbClass.Size = new System.Drawing.Size(99, 24);
+            this.cbClass.TabIndex = 38;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Show Character";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 800);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbClass);
+            this.Controls.Add(this.lblClass);
+            this.Controls.Add(this.cbRace);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.lblRace);
             this.Controls.Add(this.btnRandom);
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.btnNextImage);
             this.Controls.Add(this.btnLastImage);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.pbCharacter);
@@ -410,10 +438,6 @@
         private System.Windows.Forms.Label lblAgilityCount;
         private System.Windows.Forms.Label lblIntelligenceCount;
         private System.Windows.Forms.PictureBox pbCharacter;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.SaveFileDialog sfd;
@@ -426,6 +450,12 @@
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.TextBox txtBoxName;
         private System.Windows.Forms.Button btnRandom;
+        private System.Windows.Forms.Label lblRace;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ComboBox cbRace;
+        private System.Windows.Forms.Label lblClass;
+        private System.Windows.Forms.ComboBox cbClass;
+        private System.Windows.Forms.Button button1;
     }
 }
 

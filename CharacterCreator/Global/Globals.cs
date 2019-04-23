@@ -22,4 +22,18 @@ namespace CharacterCreator.Global
         Female,
         Random
     }
+
+    public enum Race
+    {
+        Human,
+        Elf,
+        Dwarf
+    }
+
+    public enum Class
+    {
+        Wizard,
+        Archer,
+        Warrior
+    }
 }
