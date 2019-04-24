@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace CharacterCreator
 {
-    public partial class Form2 : Form
+    public partial class frmShow : Form
     {
-        public Form2()
+        public frmShow()
         {
             InitializeComponent();
+        }
+
+        private void LblStrength_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmShow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PbCharacter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
