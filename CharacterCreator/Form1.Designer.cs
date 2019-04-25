@@ -59,6 +59,8 @@
             this.lblClass = new System.Windows.Forms.Label();
             this.cbClass = new System.Windows.Forms.ComboBox();
             this.btnShow = new System.Windows.Forms.Button();
+            this.cbRandomName = new System.Windows.Forms.CheckBox();
+            this.cbRandomGender = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +90,7 @@
             // lblIntelligence
             // 
             this.lblIntelligence.AutoSize = true;
-            this.lblIntelligence.Location = new System.Drawing.Point(437, 113);
+            this.lblIntelligence.Location = new System.Drawing.Point(437, 116);
             this.lblIntelligence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIntelligence.Name = "lblIntelligence";
             this.lblIntelligence.Size = new System.Drawing.Size(79, 17);
@@ -109,7 +111,7 @@
             // 
             // btnStrengthMinus
             // 
-            this.btnStrengthMinus.Location = new System.Drawing.Point(527, 47);
+            this.btnStrengthMinus.Location = new System.Drawing.Point(536, 47);
             this.btnStrengthMinus.Margin = new System.Windows.Forms.Padding(4);
             this.btnStrengthMinus.Name = "btnStrengthMinus";
             this.btnStrengthMinus.Size = new System.Drawing.Size(29, 27);
@@ -120,7 +122,7 @@
             // 
             // btnAgilityMinus
             // 
-            this.btnAgilityMinus.Location = new System.Drawing.Point(527, 79);
+            this.btnAgilityMinus.Location = new System.Drawing.Point(536, 79);
             this.btnAgilityMinus.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgilityMinus.Name = "btnAgilityMinus";
             this.btnAgilityMinus.Size = new System.Drawing.Size(29, 27);
@@ -142,7 +144,7 @@
             // 
             // btnIntelligenceMinus
             // 
-            this.btnIntelligenceMinus.Location = new System.Drawing.Point(527, 111);
+            this.btnIntelligenceMinus.Location = new System.Drawing.Point(536, 111);
             this.btnIntelligenceMinus.Margin = new System.Windows.Forms.Padding(4);
             this.btnIntelligenceMinus.Name = "btnIntelligenceMinus";
             this.btnIntelligenceMinus.Size = new System.Drawing.Size(29, 27);
@@ -165,32 +167,32 @@
             // lblStrengthCount
             // 
             this.lblStrengthCount.AutoSize = true;
-            this.lblStrengthCount.Location = new System.Drawing.Point(564, 53);
+            this.lblStrengthCount.Location = new System.Drawing.Point(573, 52);
             this.lblStrengthCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStrengthCount.Name = "lblStrengthCount";
-            this.lblStrengthCount.Size = new System.Drawing.Size(24, 17);
+            this.lblStrengthCount.Size = new System.Drawing.Size(16, 17);
             this.lblStrengthCount.TabIndex = 12;
-            this.lblStrengthCount.Text = "10";
+            this.lblStrengthCount.Text = "5";
             // 
             // lblAgilityCount
             // 
             this.lblAgilityCount.AutoSize = true;
-            this.lblAgilityCount.Location = new System.Drawing.Point(564, 85);
+            this.lblAgilityCount.Location = new System.Drawing.Point(573, 84);
             this.lblAgilityCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAgilityCount.Name = "lblAgilityCount";
-            this.lblAgilityCount.Size = new System.Drawing.Size(24, 17);
+            this.lblAgilityCount.Size = new System.Drawing.Size(16, 17);
             this.lblAgilityCount.TabIndex = 13;
-            this.lblAgilityCount.Text = "10";
+            this.lblAgilityCount.Text = "5";
             // 
             // lblIntelligenceCount
             // 
             this.lblIntelligenceCount.AutoSize = true;
-            this.lblIntelligenceCount.Location = new System.Drawing.Point(564, 117);
+            this.lblIntelligenceCount.Location = new System.Drawing.Point(573, 116);
             this.lblIntelligenceCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIntelligenceCount.Name = "lblIntelligenceCount";
-            this.lblIntelligenceCount.Size = new System.Drawing.Size(24, 17);
+            this.lblIntelligenceCount.Size = new System.Drawing.Size(16, 17);
             this.lblIntelligenceCount.TabIndex = 14;
-            this.lblIntelligenceCount.Text = "10";
+            this.lblIntelligenceCount.Text = "5";
             // 
             // pbCharacter
             // 
@@ -222,6 +224,12 @@
             this.lblGender.TabIndex = 16;
             this.lblGender.Text = "Gender";
             this.lblGender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sfd
+            // 
+            this.sfd.InitialDirectory = "C:\\";
+            this.sfd.Title = "Save Character";
+            this.sfd.FileOk += new System.ComponentModel.CancelEventHandler(this.Sfd_FileOk);
             // 
             // menuStrip
             // 
@@ -344,7 +352,7 @@
             this.cbRace.Name = "cbRace";
             this.cbRace.Size = new System.Drawing.Size(99, 24);
             this.cbRace.TabIndex = 36;
-            this.cbRace.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            this.cbRace.SelectedIndexChanged += new System.EventHandler(this.CbRace_SelectedIndexChanged);
             // 
             // lblClass
             // 
@@ -369,6 +377,7 @@
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(99, 24);
             this.cbClass.TabIndex = 38;
+            this.cbClass.SelectedIndexChanged += new System.EventHandler(this.CbClass_SelectedIndexChanged);
             // 
             // btnShow
             // 
@@ -380,11 +389,33 @@
             this.btnShow.UseVisualStyleBackColor = true;
             this.btnShow.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // cbRandomName
+            // 
+            this.cbRandomName.AutoSize = true;
+            this.cbRandomName.Location = new System.Drawing.Point(22, 183);
+            this.cbRandomName.Name = "cbRandomName";
+            this.cbRandomName.Size = new System.Drawing.Size(122, 21);
+            this.cbRandomName.TabIndex = 40;
+            this.cbRandomName.Text = "Random name";
+            this.cbRandomName.UseVisualStyleBackColor = true;
+            // 
+            // cbRandomGender
+            // 
+            this.cbRandomGender.AutoSize = true;
+            this.cbRandomGender.Location = new System.Drawing.Point(22, 214);
+            this.cbRandomGender.Name = "cbRandomGender";
+            this.cbRandomGender.Size = new System.Drawing.Size(132, 21);
+            this.cbRandomGender.TabIndex = 41;
+            this.cbRandomGender.Text = "Random gender";
+            this.cbRandomGender.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 800);
+            this.ClientSize = new System.Drawing.Size(643, 303);
+            this.Controls.Add(this.cbRandomGender);
+            this.Controls.Add(this.cbRandomName);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.cbClass);
             this.Controls.Add(this.lblClass);
@@ -457,6 +488,8 @@
         private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.ComboBox cbClass;
         private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.CheckBox cbRandomName;
+        private System.Windows.Forms.CheckBox cbRandomGender;
     }
 }
 

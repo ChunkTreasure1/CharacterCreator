@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 using CharacterCreator.Global;
 
@@ -14,9 +15,6 @@ namespace CharacterCreator
 {
     public partial class frmMain : Form
     {
-        private List<Image> m_MaleImages = new List<Image>();
-        private List<Image> m_FemaleImages = new List<Image>();
-        private List<Image> m_Images = new List<Image>();
 
         private string[] m_MaleNames;
         private string[] m_FemaleNames;
@@ -27,9 +25,11 @@ namespace CharacterCreator
         public frmMain()
         {
             InitializeComponent();
-            LoadImages();
+            Globals.LoadImages();
             LoadNames();
 
+            cbRandomGender.Checked = true;
+            cbRandomName.Checked = true;
             cbGender.SelectedIndex = 2;
             CreateRandomCharacter();
         }
@@ -47,12 +47,37 @@ namespace CharacterCreator
                 CheckFileExists = true,
                 CheckPathExists = true,
 
-                DefaultExt = "char"
+                DefaultExt = "chf",
+                Filter = "Character Files (*.chf)|*.chf|All Files (*.*)|*.*"
             };
+
+            ofd.ShowDialog();
+
+            StreamReader sr = File.OpenText(ofd.FileName);
+
+            Globals.Name = sr.ReadLine();
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            sfd.DefaultExt = "chf";
+            sfd.Filter = "Character Files (*.chf)|*.chf|All Files (*.*)|*.*";
+            sfd.ShowDialog();
+
+            StreamWriter sw = File.CreateText(sfd.FileName);
+
+            sw.WriteLine(Globals.Name);
+            sw.WriteLine(Globals.GenderToString());
+            sw.WriteLine(Globals.RaceToString());
+
+            sw.WriteLine(Globals.ClassToString());
+            sw.WriteLine(Globals.Strength);
+            sw.WriteLine(Globals.Intelligence);
+
+            sw.WriteLine(Globals.Agility);
+            sw.WriteLine(Globals.GetImagePath());
+
+            sw.Close();
         }
 
         private void BtnStrengthMinus_Click(object sender, EventArgs e)
@@ -66,7 +91,7 @@ namespace CharacterCreator
 
         private void BtnStrengthPlus_Click(object sender, EventArgs e)
         {
-            if (Globals.Strength < 10)
+            if (Globals.Strength < 20)
             {
                 Globals.Strength++;
                 lblStrengthCount.Text = Globals.Strength.ToString();
@@ -84,7 +109,7 @@ namespace CharacterCreator
 
         private void BtnAgilityPlus_Click(object sender, EventArgs e)
         {
-            if (Globals.Agility < 10)
+            if (Globals.Agility < 20)
             {
                 Globals.Agility++;
                 lblAgilityCount.Text = Globals.Agility.ToString();
@@ -102,24 +127,10 @@ namespace CharacterCreator
 
         private void BtnIntelligencePlus_Click(object sender, EventArgs e)
         {
-            if (Globals.Intelligence < 10)
+            if (Globals.Intelligence < 20)
             {
                 Globals.Intelligence++;
                 lblIntelligenceCount.Text = Globals.Intelligence.ToString();
-            }
-        }
-
-        //Loads the base images
-        private void LoadImages()
-        {
-            for (int i = 0; i < 9; i++)
-            {
-                m_MaleImages.Add(Image.FromFile("Images/Male/M_portrait0" + i.ToString() + ".jpg"));
-            }
-
-            for (int i = 0; i < 9; i++)
-            {
-                m_FemaleImages.Add(Image.FromFile("Images/Female/F_portrait0" + i.ToString() + ".jpg"));
             }
         }
 
@@ -135,19 +146,19 @@ namespace CharacterCreator
             if (cbGender.SelectedIndex == 0)
             {
                 Globals.Gender = Gender.Male;
-                m_Images = m_MaleImages;
+                Globals.m_Images = Globals.m_MaleImages;
             }
             else if (cbGender.SelectedIndex == 1)
             {
                 Globals.Gender = Gender.Female;
-                m_Images = m_FemaleImages;
+                Globals.m_Images = Globals.m_FemaleImages;
             }
             else if (cbGender.SelectedIndex == 2)
             {
                 return;
             }
             m_CurrentImageIndex = 0;
-            pbCharacter.Image = m_Images[m_CurrentImageIndex];
+            pbCharacter.Image = Globals.m_Images[m_CurrentImageIndex];
         }
 
         //Changes image
@@ -156,22 +167,22 @@ namespace CharacterCreator
             m_CurrentImageIndex--;
             if (m_CurrentImageIndex < 0)
             {
-                m_CurrentImageIndex = m_Images.Count - 1;
+                m_CurrentImageIndex = Globals.m_Images.Count - 1;
             }
-            pbCharacter.Image = m_Images[m_CurrentImageIndex];
-            Globals.Picture = m_Images[m_CurrentImageIndex];
+            pbCharacter.Image = Globals.m_Images[m_CurrentImageIndex];
+            Globals.Picture = Globals.m_Images[m_CurrentImageIndex];
         }
 
         //Changes image
         private void BtnNextImage_Click(object sender, EventArgs e)
         {
             m_CurrentImageIndex++;
-            if (m_CurrentImageIndex >= m_Images.Count)
+            if (m_CurrentImageIndex >= Globals.m_Images.Count)
             {
                 m_CurrentImageIndex = 0;
             }
-            pbCharacter.Image = m_Images[m_CurrentImageIndex];
-            Globals.Picture = m_Images[m_CurrentImageIndex];
+            pbCharacter.Image = Globals.m_Images[m_CurrentImageIndex];
+            Globals.Picture = Globals.m_Images[m_CurrentImageIndex];
         }
 
         //Changes the name of the character
@@ -182,50 +193,41 @@ namespace CharacterCreator
 
         private void CreateRandomCharacter()
         {
-            if (cbGender.SelectedIndex == 2)
+            if (cbRandomGender.Checked)
             {
                 int gender = cbGender.SelectedIndex = random.Next(0, 2);
                 Globals.Gender = (Gender)gender;
-
-                if (gender == 0)
+            }
+            if (cbGender.SelectedIndex == 0)
+            {
+                Globals.m_Images = Globals.m_MaleImages;
+                pbCharacter.Image = Globals.m_MaleImages[random.Next(0, Globals.m_MaleImages.Count)];
+                Globals.Picture = pbCharacter.Image;
+                if (cbRandomName.Checked)
                 {
-                    m_Images = m_MaleImages;
-                    pbCharacter.Image = m_MaleImages[random.Next(0, m_MaleImages.Count)];
-                    Globals.Picture = pbCharacter.Image;
                     txtBoxName.Text = m_MaleNames[random.Next(0, m_MaleNames.Length)];
                 }
-                else
+            }
+            else
+            {
+                Globals.m_Images = Globals.m_FemaleImages;
+                pbCharacter.Image = Globals.m_FemaleImages[random.Next(0, Globals.m_FemaleImages.Count)];
+                Globals.Picture = pbCharacter.Image;
+                if (cbRandomName.Checked)
                 {
-                    m_Images = m_FemaleImages;
-                    pbCharacter.Image = m_FemaleImages[random.Next(0, m_FemaleImages.Count)];
-                    Globals.Picture = pbCharacter.Image;
                     txtBoxName.Text = m_FemaleNames[random.Next(0, m_FemaleNames.Length)];
                 }
             }
-            else if (cbGender.SelectedIndex == 1)
-            {
-                m_Images = m_FemaleImages;
-                pbCharacter.Image = m_FemaleImages[random.Next(0, m_FemaleImages.Count)];
-                Globals.Picture = pbCharacter.Image;
-                txtBoxName.Text = m_FemaleNames[random.Next(0, m_FemaleNames.Length)];
-            }
-            else if (cbGender.SelectedIndex == 0)
-            {
-                m_Images = m_MaleImages;
-                pbCharacter.Image = m_MaleImages[random.Next(0, m_MaleImages.Count)];
-                Globals.Picture = pbCharacter.Image;
-                txtBoxName.Text = m_MaleNames[random.Next(0, m_MaleNames.Length)];
-            }
+            int race = cbRace.SelectedIndex = random.Next(0, 3);
+            int classI = cbClass.SelectedIndex = random.Next(0, 3);
+
+            Globals.Race = (Race)race;
+            Globals.Class = (Class)classI;
         }
 
         private void BtnRandom_Click(object sender, EventArgs e)
         {
             CreateRandomCharacter();
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -243,6 +245,51 @@ namespace CharacterCreator
             form.SetAgility(Globals.Agility);
             form.SetImage(Globals.Picture);
             form.ShowDialog();
+        }
+
+        private void CbClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbClass.SelectedIndex == 0)
+            {
+                Globals.Class = Class.Wizard;
+            }
+            else if (cbClass.SelectedIndex == 1)
+            {
+                Globals.Class = Class.Archer;
+            }
+            else if (cbClass.SelectedIndex == 2)
+            {
+                Globals.Class = Class.Warrior;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void CbRace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRace.SelectedIndex == 0)
+            {
+                Globals.Race = Race.Human;
+            }
+            else if (cbRace.SelectedIndex == 1)
+            {
+                Globals.Race = Race.Elf;
+            }
+            else if (cbRace.SelectedIndex == 2)
+            {
+                Globals.Race = Race.Dwarf;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void Sfd_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
