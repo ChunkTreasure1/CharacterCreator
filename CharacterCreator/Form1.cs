@@ -159,6 +159,7 @@ namespace CharacterCreator
                 m_CurrentImageIndex = m_Images.Count - 1;
             }
             pbCharacter.Image = m_Images[m_CurrentImageIndex];
+            Globals.Picture = m_Images[m_CurrentImageIndex];
         }
 
         //Changes image
@@ -170,6 +171,7 @@ namespace CharacterCreator
                 m_CurrentImageIndex = 0;
             }
             pbCharacter.Image = m_Images[m_CurrentImageIndex];
+            Globals.Picture = m_Images[m_CurrentImageIndex];
         }
 
         //Changes the name of the character
@@ -189,12 +191,14 @@ namespace CharacterCreator
                 {
                     m_Images = m_MaleImages;
                     pbCharacter.Image = m_MaleImages[random.Next(0, m_MaleImages.Count)];
+                    Globals.Picture = pbCharacter.Image;
                     txtBoxName.Text = m_MaleNames[random.Next(0, m_MaleNames.Length)];
                 }
                 else
                 {
                     m_Images = m_FemaleImages;
                     pbCharacter.Image = m_FemaleImages[random.Next(0, m_FemaleImages.Count)];
+                    Globals.Picture = pbCharacter.Image;
                     txtBoxName.Text = m_FemaleNames[random.Next(0, m_FemaleNames.Length)];
                 }
             }
@@ -202,12 +206,14 @@ namespace CharacterCreator
             {
                 m_Images = m_FemaleImages;
                 pbCharacter.Image = m_FemaleImages[random.Next(0, m_FemaleImages.Count)];
+                Globals.Picture = pbCharacter.Image;
                 txtBoxName.Text = m_FemaleNames[random.Next(0, m_FemaleNames.Length)];
             }
             else if (cbGender.SelectedIndex == 0)
             {
                 m_Images = m_MaleImages;
                 pbCharacter.Image = m_MaleImages[random.Next(0, m_MaleImages.Count)];
+                Globals.Picture = pbCharacter.Image;
                 txtBoxName.Text = m_MaleNames[random.Next(0, m_MaleNames.Length)];
             }
         }
@@ -220,6 +226,23 @@ namespace CharacterCreator
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmShow form = new frmShow();
+
+            form.SetName(Globals.Name);
+            form.SetGender(Globals.Gender);
+            form.SetRace(Globals.Race);
+
+            form.SetClass(Globals.Class);
+            form.SetStrength(Globals.Strength);
+            form.SetIntelligence(Globals.Intelligence);
+
+            form.SetAgility(Globals.Agility);
+            form.SetImage(Globals.Picture);
+            form.ShowDialog();
         }
     }
 }

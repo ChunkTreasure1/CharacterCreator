@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace CharacterCreator.Global
 {
@@ -13,7 +14,11 @@ namespace CharacterCreator.Global
         public static int Intelligence = 0;
 
         public static Gender Gender = Gender.Male;
+        public static Race Race = Race.Human;
+        public static Class Class = Class.Warrior;
+
         public static string Name = "";
+        public static Image Picture;
     }
 
     public enum Gender

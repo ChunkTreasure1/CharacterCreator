@@ -58,7 +58,7 @@
             this.cbRace = new System.Windows.Forms.ComboBox();
             this.lblClass = new System.Windows.Forms.Label();
             this.cbClass = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnShow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -370,21 +370,22 @@
             this.cbClass.Size = new System.Drawing.Size(99, 24);
             this.cbClass.TabIndex = 38;
             // 
-            // button1
+            // btnShow
             // 
-            this.button1.Location = new System.Drawing.Point(22, 251);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Show Character";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnShow.Location = new System.Drawing.Point(22, 251);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(75, 23);
+            this.btnShow.TabIndex = 39;
+            this.btnShow.Text = "Show Character";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 800);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnShow);
             this.Controls.Add(this.cbClass);
             this.Controls.Add(this.lblClass);
             this.Controls.Add(this.cbRace);
@@ -455,7 +456,7 @@
         private System.Windows.Forms.ComboBox cbRace;
         private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.ComboBox cbClass;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnShow;
     }
 }
 
