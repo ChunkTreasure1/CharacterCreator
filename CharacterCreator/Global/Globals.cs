@@ -35,6 +35,17 @@ namespace CharacterCreator.Global
                 return "Female";
             }
         }
+        public static Gender StringToGender(string gender)
+        {
+            if (gender == "Male")
+            {
+                return Gender.Male;
+            }
+            else
+            {
+                return Gender.Female;
+            }
+        }
         public static string RaceToString()
         {
             if (Race == Race.Dwarf)
@@ -50,6 +61,21 @@ namespace CharacterCreator.Global
                 return "Human";
             }
         }
+        public static Race StringToRace(string race)
+        {
+            if (race == "Dwarf")
+            {
+                return Race.Dwarf;
+            }
+            else if (race == "Elf")
+            {
+                return Race.Elf;
+            }
+            else
+            {
+                return Race.Human;
+            }
+        }
         public static string ClassToString()
         {
             if (Class == Class.Wizard)
@@ -63,6 +89,21 @@ namespace CharacterCreator.Global
             else
             {
                 return "Warrior";
+            }
+        }
+        public static Class StringToClass(string classT)
+        {
+            if (classT == "Wizard")
+            {
+                return Class.Wizard;
+            }
+            else if (classT == "Archer")
+            {
+                return Class.Archer;
+            }
+            else
+            {
+                return Class.Warrior;
             }
         }
         public static string GetImagePath()

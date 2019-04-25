@@ -53,9 +53,34 @@ namespace CharacterCreator
 
             ofd.ShowDialog();
 
+            if (!ofd.CheckFileExists || ofd.FileName == "")
+            {
+                return;
+            }
+
             StreamReader sr = File.OpenText(ofd.FileName);
 
             Globals.Name = sr.ReadLine();
+            Globals.Gender = Globals.StringToGender(sr.ReadLine());
+            Globals.Race = Globals.StringToRace(sr.ReadLine());
+
+            Globals.Class = Globals.StringToClass(sr.ReadLine());
+            Globals.Strength = Int32.Parse(sr.ReadLine());
+            Globals.Intelligence = Int32.Parse(sr.ReadLine());
+
+            Globals.Agility = Int32.Parse(sr.ReadLine());
+            Globals.Picture = Image.FromFile(sr.ReadLine());
+
+            pbCharacter.Image = Globals.Picture;
+            txtBoxName.Text = Globals.Name;
+            cbGender.SelectedIndex = (int)Globals.Gender;
+
+            cbRace.SelectedIndex = (int)Globals.Race;
+            cbClass.SelectedIndex = (int)Globals.Class;
+
+            lblStrengthCount.Text = Globals.Strength.ToString();
+            lblIntelligenceCount.Text = Globals.Intelligence.ToString();
+            lblAgilityCount.Text = Globals.Agility.ToString();
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +88,11 @@ namespace CharacterCreator
             sfd.DefaultExt = "chf";
             sfd.Filter = "Character Files (*.chf)|*.chf|All Files (*.*)|*.*";
             sfd.ShowDialog();
+
+            if (sfd.FileName == "")
+            {
+                return;
+            }
 
             StreamWriter sw = File.CreateText(sfd.FileName);
 
@@ -223,6 +253,29 @@ namespace CharacterCreator
 
             Globals.Race = (Race)race;
             Globals.Class = (Class)classI;
+
+            if (Globals.Class == Class.Warrior)
+            {
+                Globals.Strength = random.Next(10, 21);
+                Globals.Intelligence = random.Next(1, 11);
+                Globals.Agility = random.Next(3, 12);
+            }
+            else if (Globals.Class == Class.Archer)
+            {
+                Globals.Strength = random.Next(5, 13);
+                Globals.Intelligence = random.Next(10, 16);
+                Globals.Agility = random.Next(10, 21);
+            }
+            else if (Globals.Class == Class.Wizard)
+            {
+                Globals.Strength = random.Next(3, 11);
+                Globals.Intelligence = random.Next(13, 21);
+                Globals.Agility = random.Next(7, 16);
+            }
+
+            lblStrengthCount.Text = Globals.Strength.ToString();
+            lblIntelligenceCount.Text = Globals.Intelligence.ToString();
+            lblAgilityCount.Text = Globals.Agility.ToString();
         }
 
         private void BtnRandom_Click(object sender, EventArgs e)
