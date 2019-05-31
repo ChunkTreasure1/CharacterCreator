@@ -30,7 +30,7 @@ namespace CharacterCreator
 
             cbRandomGender.Checked = true;
             cbRandomName.Checked = true;
-            cbGender.SelectedIndex = 2;
+            cbGender.SelectedIndex = 1;
             CreateRandomCharacter();
         }
 
@@ -69,7 +69,16 @@ namespace CharacterCreator
             Globals.Intelligence = Int32.Parse(sr.ReadLine());
 
             Globals.Agility = Int32.Parse(sr.ReadLine());
-            Globals.Picture = Image.FromFile(sr.ReadLine());
+            string text = sr.ReadLine();
+
+            if (Globals.Gender == Gender.Female)
+            {
+                Globals.Picture = Globals.m_FemaleImages[Int32.Parse(text)];
+            }
+            else
+            {
+                Globals.Picture = Globals.m_MaleImages[Int32.Parse(text)];
+            }
 
             pbCharacter.Image = Globals.Picture;
             txtBoxName.Text = Globals.Name;
@@ -105,7 +114,7 @@ namespace CharacterCreator
             sw.WriteLine(Globals.Intelligence);
 
             sw.WriteLine(Globals.Agility);
-            sw.WriteLine(Globals.GetImagePath());
+            sw.WriteLine(Globals.GetImageIndex());
 
             sw.Close();
         }

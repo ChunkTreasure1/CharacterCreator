@@ -106,35 +106,30 @@ namespace CharacterCreator.Global
                 return Class.Warrior;
             }
         }
-        public static string GetImagePath()
+        public static string GetImageIndex()
         {
             if (Gender == Gender.Male)
             {
-                int temp = 0;
-
                 for (int i = 0; i < m_MaleImages.Count; i++)
                 {
                     if (Picture == m_MaleImages[i])
                     {
-                        temp = i;
+                        return i.ToString();
                     }
                 }
 
-                return "Images/Male/M_portrait0" + temp.ToString() + ".jpg";
+                return "";
             }
             else
             {
-                int temp = 0;
-
                 for (int i = 0; i < m_FemaleImages.Count; i++)
                 {
                     if (Picture == m_FemaleImages[i])
                     {
-                        temp = i;
+                        return i.ToString();
                     }
                 }
-
-                return "Images/Female/F_portrait0" + temp.ToString() + ".jpg";
+                return "";
             }
         }
         //Loads the base images

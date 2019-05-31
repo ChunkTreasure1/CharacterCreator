@@ -68,10 +68,9 @@
             // lblStrength
             // 
             this.lblStrength.AutoSize = true;
-            this.lblStrength.Location = new System.Drawing.Point(437, 49);
-            this.lblStrength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStrength.Location = new System.Drawing.Point(328, 40);
             this.lblStrength.Name = "lblStrength";
-            this.lblStrength.Size = new System.Drawing.Size(62, 17);
+            this.lblStrength.Size = new System.Drawing.Size(47, 13);
             this.lblStrength.TabIndex = 3;
             this.lblStrength.Text = "Strength";
             this.lblStrength.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,10 +78,9 @@
             // lblAgility
             // 
             this.lblAgility.AutoSize = true;
-            this.lblAgility.Location = new System.Drawing.Point(437, 81);
-            this.lblAgility.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgility.Location = new System.Drawing.Point(328, 66);
             this.lblAgility.Name = "lblAgility";
-            this.lblAgility.Size = new System.Drawing.Size(45, 17);
+            this.lblAgility.Size = new System.Drawing.Size(34, 13);
             this.lblAgility.TabIndex = 4;
             this.lblAgility.Text = "Agility";
             this.lblAgility.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,20 +88,18 @@
             // lblIntelligence
             // 
             this.lblIntelligence.AutoSize = true;
-            this.lblIntelligence.Location = new System.Drawing.Point(437, 116);
-            this.lblIntelligence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIntelligence.Location = new System.Drawing.Point(328, 94);
             this.lblIntelligence.Name = "lblIntelligence";
-            this.lblIntelligence.Size = new System.Drawing.Size(79, 17);
+            this.lblIntelligence.Size = new System.Drawing.Size(61, 13);
             this.lblIntelligence.TabIndex = 5;
             this.lblIntelligence.Text = "Intelligence";
             this.lblIntelligence.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStrengthPlus
             // 
-            this.btnStrengthPlus.Location = new System.Drawing.Point(597, 47);
-            this.btnStrengthPlus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStrengthPlus.Location = new System.Drawing.Point(448, 38);
             this.btnStrengthPlus.Name = "btnStrengthPlus";
-            this.btnStrengthPlus.Size = new System.Drawing.Size(29, 27);
+            this.btnStrengthPlus.Size = new System.Drawing.Size(22, 22);
             this.btnStrengthPlus.TabIndex = 6;
             this.btnStrengthPlus.Text = ">";
             this.btnStrengthPlus.UseVisualStyleBackColor = true;
@@ -111,10 +107,9 @@
             // 
             // btnStrengthMinus
             // 
-            this.btnStrengthMinus.Location = new System.Drawing.Point(536, 47);
-            this.btnStrengthMinus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStrengthMinus.Location = new System.Drawing.Point(402, 38);
             this.btnStrengthMinus.Name = "btnStrengthMinus";
-            this.btnStrengthMinus.Size = new System.Drawing.Size(29, 27);
+            this.btnStrengthMinus.Size = new System.Drawing.Size(22, 22);
             this.btnStrengthMinus.TabIndex = 7;
             this.btnStrengthMinus.Text = "<";
             this.btnStrengthMinus.UseVisualStyleBackColor = true;
@@ -122,10 +117,9 @@
             // 
             // btnAgilityMinus
             // 
-            this.btnAgilityMinus.Location = new System.Drawing.Point(536, 79);
-            this.btnAgilityMinus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgilityMinus.Location = new System.Drawing.Point(402, 64);
             this.btnAgilityMinus.Name = "btnAgilityMinus";
-            this.btnAgilityMinus.Size = new System.Drawing.Size(29, 27);
+            this.btnAgilityMinus.Size = new System.Drawing.Size(22, 22);
             this.btnAgilityMinus.TabIndex = 9;
             this.btnAgilityMinus.Text = "<";
             this.btnAgilityMinus.UseVisualStyleBackColor = true;
@@ -133,10 +127,9 @@
             // 
             // btnAgilityPlus
             // 
-            this.btnAgilityPlus.Location = new System.Drawing.Point(597, 79);
-            this.btnAgilityPlus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgilityPlus.Location = new System.Drawing.Point(448, 64);
             this.btnAgilityPlus.Name = "btnAgilityPlus";
-            this.btnAgilityPlus.Size = new System.Drawing.Size(29, 27);
+            this.btnAgilityPlus.Size = new System.Drawing.Size(22, 22);
             this.btnAgilityPlus.TabIndex = 8;
             this.btnAgilityPlus.Text = ">";
             this.btnAgilityPlus.UseVisualStyleBackColor = true;
@@ -144,10 +137,9 @@
             // 
             // btnIntelligenceMinus
             // 
-            this.btnIntelligenceMinus.Location = new System.Drawing.Point(536, 111);
-            this.btnIntelligenceMinus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIntelligenceMinus.Location = new System.Drawing.Point(402, 90);
             this.btnIntelligenceMinus.Name = "btnIntelligenceMinus";
-            this.btnIntelligenceMinus.Size = new System.Drawing.Size(29, 27);
+            this.btnIntelligenceMinus.Size = new System.Drawing.Size(22, 22);
             this.btnIntelligenceMinus.TabIndex = 11;
             this.btnIntelligenceMinus.Text = "<";
             this.btnIntelligenceMinus.UseVisualStyleBackColor = true;
@@ -155,10 +147,9 @@
             // 
             // btnIntelligencePlus
             // 
-            this.btnIntelligencePlus.Location = new System.Drawing.Point(597, 111);
-            this.btnIntelligencePlus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIntelligencePlus.Location = new System.Drawing.Point(448, 90);
             this.btnIntelligencePlus.Name = "btnIntelligencePlus";
-            this.btnIntelligencePlus.Size = new System.Drawing.Size(29, 27);
+            this.btnIntelligencePlus.Size = new System.Drawing.Size(22, 22);
             this.btnIntelligencePlus.TabIndex = 10;
             this.btnIntelligencePlus.Text = ">";
             this.btnIntelligencePlus.UseVisualStyleBackColor = true;
@@ -167,49 +158,44 @@
             // lblStrengthCount
             // 
             this.lblStrengthCount.AutoSize = true;
-            this.lblStrengthCount.Location = new System.Drawing.Point(573, 52);
-            this.lblStrengthCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStrengthCount.Location = new System.Drawing.Point(430, 42);
             this.lblStrengthCount.Name = "lblStrengthCount";
-            this.lblStrengthCount.Size = new System.Drawing.Size(16, 17);
+            this.lblStrengthCount.Size = new System.Drawing.Size(13, 13);
             this.lblStrengthCount.TabIndex = 12;
             this.lblStrengthCount.Text = "5";
             // 
             // lblAgilityCount
             // 
             this.lblAgilityCount.AutoSize = true;
-            this.lblAgilityCount.Location = new System.Drawing.Point(573, 84);
-            this.lblAgilityCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgilityCount.Location = new System.Drawing.Point(430, 68);
             this.lblAgilityCount.Name = "lblAgilityCount";
-            this.lblAgilityCount.Size = new System.Drawing.Size(16, 17);
+            this.lblAgilityCount.Size = new System.Drawing.Size(13, 13);
             this.lblAgilityCount.TabIndex = 13;
             this.lblAgilityCount.Text = "5";
             // 
             // lblIntelligenceCount
             // 
             this.lblIntelligenceCount.AutoSize = true;
-            this.lblIntelligenceCount.Location = new System.Drawing.Point(573, 116);
-            this.lblIntelligenceCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIntelligenceCount.Location = new System.Drawing.Point(430, 94);
             this.lblIntelligenceCount.Name = "lblIntelligenceCount";
-            this.lblIntelligenceCount.Size = new System.Drawing.Size(16, 17);
+            this.lblIntelligenceCount.Size = new System.Drawing.Size(13, 13);
             this.lblIntelligenceCount.TabIndex = 14;
             this.lblIntelligenceCount.Text = "5";
             // 
             // pbCharacter
             // 
-            this.pbCharacter.Location = new System.Drawing.Point(216, 47);
-            this.pbCharacter.Margin = new System.Windows.Forms.Padding(4);
+            this.pbCharacter.Location = new System.Drawing.Point(162, 38);
             this.pbCharacter.Name = "pbCharacter";
-            this.pbCharacter.Size = new System.Drawing.Size(213, 197);
+            this.pbCharacter.Size = new System.Drawing.Size(160, 160);
             this.pbCharacter.TabIndex = 15;
             this.pbCharacter.TabStop = false;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(19, 47);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Location = new System.Drawing.Point(14, 38);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(49, 17);
+            this.lblName.Size = new System.Drawing.Size(38, 13);
             this.lblName.TabIndex = 17;
             this.lblName.Text = "Name:";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -217,10 +203,9 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(19, 85);
-            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGender.Location = new System.Drawing.Point(14, 69);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(56, 17);
+            this.lblGender.Size = new System.Drawing.Size(42, 13);
             this.lblGender.TabIndex = 16;
             this.lblGender.Text = "Gender";
             this.lblGender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -238,8 +223,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(643, 28);
+            this.menuStrip.Size = new System.Drawing.Size(482, 24);
             this.menuStrip.TabIndex = 28;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -249,29 +233,28 @@
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // btnLastImage
             // 
-            this.btnLastImage.Location = new System.Drawing.Point(176, 214);
-            this.btnLastImage.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLastImage.Location = new System.Drawing.Point(132, 174);
             this.btnLastImage.Name = "btnLastImage";
-            this.btnLastImage.Size = new System.Drawing.Size(32, 30);
+            this.btnLastImage.Size = new System.Drawing.Size(24, 24);
             this.btnLastImage.TabIndex = 29;
             this.btnLastImage.Text = "<";
             this.btnLastImage.UseVisualStyleBackColor = true;
@@ -279,10 +262,9 @@
             // 
             // btnNextImage
             // 
-            this.btnNextImage.Location = new System.Drawing.Point(437, 214);
-            this.btnNextImage.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNextImage.Location = new System.Drawing.Point(328, 174);
             this.btnNextImage.Name = "btnNextImage";
-            this.btnNextImage.Size = new System.Drawing.Size(32, 30);
+            this.btnNextImage.Size = new System.Drawing.Size(24, 24);
             this.btnNextImage.TabIndex = 30;
             this.btnNextImage.Text = ">";
             this.btnNextImage.UseVisualStyleBackColor = true;
@@ -294,29 +276,27 @@
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Items.AddRange(new object[] {
             "Male",
-            "Female",
-            "Random"});
-            this.cbGender.Location = new System.Drawing.Point(108, 79);
-            this.cbGender.Margin = new System.Windows.Forms.Padding(4);
+            "Female"});
+            this.cbGender.Location = new System.Drawing.Point(81, 64);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(99, 24);
+            this.cbGender.Size = new System.Drawing.Size(75, 21);
             this.cbGender.TabIndex = 31;
             this.cbGender.SelectedIndexChanged += new System.EventHandler(this.CbGender_SelectedIndexChanged);
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(108, 47);
-            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxName.Location = new System.Drawing.Point(81, 38);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(99, 22);
+            this.txtBoxName.Size = new System.Drawing.Size(75, 20);
             this.txtBoxName.TabIndex = 32;
             this.txtBoxName.TextChanged += new System.EventHandler(this.TxtBoxName_TextChanged);
             // 
             // btnRandom
             // 
-            this.btnRandom.Location = new System.Drawing.Point(216, 251);
+            this.btnRandom.Location = new System.Drawing.Point(162, 204);
+            this.btnRandom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRandom.Name = "btnRandom";
-            this.btnRandom.Size = new System.Drawing.Size(213, 23);
+            this.btnRandom.Size = new System.Drawing.Size(160, 19);
             this.btnRandom.TabIndex = 33;
             this.btnRandom.Text = "Create Random Character";
             this.btnRandom.UseVisualStyleBackColor = true;
@@ -325,17 +305,19 @@
             // lblRace
             // 
             this.lblRace.AutoSize = true;
-            this.lblRace.Location = new System.Drawing.Point(19, 121);
+            this.lblRace.Location = new System.Drawing.Point(14, 98);
+            this.lblRace.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRace.Name = "lblRace";
-            this.lblRace.Size = new System.Drawing.Size(41, 17);
+            this.lblRace.Size = new System.Drawing.Size(33, 13);
             this.lblRace.TabIndex = 34;
             this.lblRace.Text = "Race";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(455, 289);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(341, 235);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(6, 6);
             this.flowLayoutPanel1.TabIndex = 35;
             // 
             // cbRace
@@ -345,21 +327,20 @@
             this.cbRace.Items.AddRange(new object[] {
             "Human",
             "Elf",
-            "Dwarf",
-            "Random"});
-            this.cbRace.Location = new System.Drawing.Point(108, 117);
-            this.cbRace.Margin = new System.Windows.Forms.Padding(4);
+            "Dwarf"});
+            this.cbRace.Location = new System.Drawing.Point(81, 95);
             this.cbRace.Name = "cbRace";
-            this.cbRace.Size = new System.Drawing.Size(99, 24);
+            this.cbRace.Size = new System.Drawing.Size(75, 21);
             this.cbRace.TabIndex = 36;
             this.cbRace.SelectedIndexChanged += new System.EventHandler(this.CbRace_SelectedIndexChanged);
             // 
             // lblClass
             // 
             this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(19, 152);
+            this.lblClass.Location = new System.Drawing.Point(14, 124);
+            this.lblClass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(42, 17);
+            this.lblClass.Size = new System.Drawing.Size(32, 13);
             this.lblClass.TabIndex = 37;
             this.lblClass.Text = "Class";
             // 
@@ -370,20 +351,19 @@
             this.cbClass.Items.AddRange(new object[] {
             "Wizard",
             "Archer",
-            "Warrior",
-            "Random"});
-            this.cbClass.Location = new System.Drawing.Point(109, 152);
-            this.cbClass.Margin = new System.Windows.Forms.Padding(4);
+            "Warrior"});
+            this.cbClass.Location = new System.Drawing.Point(82, 124);
             this.cbClass.Name = "cbClass";
-            this.cbClass.Size = new System.Drawing.Size(99, 24);
+            this.cbClass.Size = new System.Drawing.Size(75, 21);
             this.cbClass.TabIndex = 38;
             this.cbClass.SelectedIndexChanged += new System.EventHandler(this.CbClass_SelectedIndexChanged);
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(22, 251);
+            this.btnShow.Location = new System.Drawing.Point(16, 204);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(75, 23);
+            this.btnShow.Size = new System.Drawing.Size(56, 19);
             this.btnShow.TabIndex = 39;
             this.btnShow.Text = "Show Character";
             this.btnShow.UseVisualStyleBackColor = true;
@@ -392,9 +372,10 @@
             // cbRandomName
             // 
             this.cbRandomName.AutoSize = true;
-            this.cbRandomName.Location = new System.Drawing.Point(22, 183);
+            this.cbRandomName.Location = new System.Drawing.Point(16, 149);
+            this.cbRandomName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbRandomName.Name = "cbRandomName";
-            this.cbRandomName.Size = new System.Drawing.Size(122, 21);
+            this.cbRandomName.Size = new System.Drawing.Size(95, 17);
             this.cbRandomName.TabIndex = 40;
             this.cbRandomName.Text = "Random name";
             this.cbRandomName.UseVisualStyleBackColor = true;
@@ -402,18 +383,19 @@
             // cbRandomGender
             // 
             this.cbRandomGender.AutoSize = true;
-            this.cbRandomGender.Location = new System.Drawing.Point(22, 214);
+            this.cbRandomGender.Location = new System.Drawing.Point(16, 174);
+            this.cbRandomGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbRandomGender.Name = "cbRandomGender";
-            this.cbRandomGender.Size = new System.Drawing.Size(132, 21);
+            this.cbRandomGender.Size = new System.Drawing.Size(102, 17);
             this.cbRandomGender.TabIndex = 41;
             this.cbRandomGender.Text = "Random gender";
             this.cbRandomGender.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 303);
+            this.ClientSize = new System.Drawing.Size(482, 246);
             this.Controls.Add(this.cbRandomGender);
             this.Controls.Add(this.cbRandomName);
             this.Controls.Add(this.btnShow);
@@ -444,7 +426,6 @@
             this.Controls.Add(this.lblStrength);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Text = "Character Creator";
             this.Load += new System.EventHandler(this.FrmMain_Load);
